@@ -7,13 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import springstudy.spring.domain.Member;
 import springstudy.spring.service.MemberService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 import java.util.List;
 import java.util.Optional;
 
@@ -73,9 +69,9 @@ public class MemberController {
             memberService.join(member);
 
             return "redirect:/";
-        }else if(checkID && !checkPW){
+        }else if(checkID){
             return "fail_checkPW";
-        }else if(!checkID && checkPW){
+        }else if(checkPW){
             return "fail_checkID";
         }else
             return "join";
