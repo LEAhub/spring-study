@@ -109,6 +109,9 @@ public class MemberController {
         return "login"; //login.html을 찾아감
     }
 
+
+
+    //MemberForm 얘는 대체 뭐냐.... 어디에 있든 된다. 어떻게 얘가 setting이 되는 거지???
     //로그인 할 때 입력 받은 값은 MemberForm 객체에 담김
     @PostMapping("loginform")
     public String login(Member member, MemberForm form){
