@@ -31,10 +31,7 @@ public class MemberController {
         return "main";
     }
 
-    @GetMapping("login")
-    public String loginForm(){
-        return "login";
-    }
+
     @GetMapping("join")
     public String joinForm(){
         return "join";
@@ -72,11 +69,17 @@ public class MemberController {
         return "members";
     }
 
-    @PostMapping("login")
+    @GetMapping("login")
+    public String loginForm(){
+        return "login";
+    }
+
+    @PostMapping("loginform")
     public String login(Member member, MemberForm form){
         member.setUserID(form.getUserID());
         member.setUserPW(form.getUserPW());
         memberService.login(member);
         return "successLogin";
     }
+
 }
