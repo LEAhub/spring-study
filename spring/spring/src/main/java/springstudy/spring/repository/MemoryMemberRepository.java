@@ -32,10 +32,6 @@ public class MemoryMemberRepository implements MemberRepository{
         return new ArrayList<>(users.values());
     }
 
-    public Optional<Member> checkEqualsPW(String password){
-        return users.values().stream().filter(member -> member.getUserPW().equals(password)).findAny();
-    }
-
     public void clearUsers(){
         users.clear();
     }

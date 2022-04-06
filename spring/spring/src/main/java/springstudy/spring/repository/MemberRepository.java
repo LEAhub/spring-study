@@ -15,6 +15,4 @@ public interface MemberRepository {
     public Optional<Member> findByName(String name);
     //모든 회원 정보 보기
     public List<Member> findAll();
-    //비밀번호 일치 확인
-    public Optional<Member> checkEqualsPW(String password);
 }

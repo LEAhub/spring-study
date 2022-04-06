@@ -8,8 +8,9 @@
 <body>
     <h2>회원 목록을 보여드립니다.</h2>
     <tr th:each="member : ${members}">
-        <p th:text="${member.name}">
-        <p th:text="${member.userID}">
+        <p th:text="'회원 이름 : '+${member.name}">
+        <p th:text="'회원 아이디 : '+${member.userID}">
+        <p th:text="'--------------------------'"></p>
     </tr>
 
 </body>
